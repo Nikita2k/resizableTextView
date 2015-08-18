@@ -9,7 +9,7 @@
 @implementation ResizableTextView
 - (void) updateConstraints {
     // calculate contentSize manually (ios7 doesn't calculate it before viewDidAppear, and we'll get here before)
-    CGSize contentSize = [self sizeThatFits:CGSizeMake(self.frame.size.width, FLT_MAX)];
+    CGSize contentSize = [self sizeThatFits:CGSizeMake(self.frame.size.width, CGFLOAT_MAX)];
     
     // set the height constraint to change textView height
     [self.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop) {
